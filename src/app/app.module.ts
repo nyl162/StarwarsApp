@@ -6,11 +6,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { importModule } from './import.module';
+import { CategoryComponent } from './category/category.component';
+import { TestComponent } from './test/test.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CategoryComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,7 @@
+<div *ngFor = "let n of CategoryList">
+  <mat-card class = "addMargin" (click) = "selectedCategory(n.url)" >
+    <mat-card-content>
+      {{n.category}}
+    </mat-card-content>
+  </mat-card>
+</div>
