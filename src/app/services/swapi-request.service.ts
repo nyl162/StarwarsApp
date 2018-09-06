@@ -29,7 +29,7 @@ detailsinItem(Cat,ID):Observable<any>{
   .get(`https://swapi.co/api/${Cat}/${ID}/?format=json`)
   .pipe(
     map(response => {
-     //console.log(response);
+     console.log(response);
     return response;
   })
   );

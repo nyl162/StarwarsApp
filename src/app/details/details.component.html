@@ -4,20 +4,51 @@
     </button>
   </div>
 
-<div *ngIf="title == 'people'">
+<div>
   <mat-card  class="example-card">
     <div class="addMargin" fxLayoutAlign="center">
       <img mat-card-image [src]="imageURL" [alt]="detail?.name" style="max-width: 400px;">
     </div>
       <mat-card-content>
-          <p>
-              {{title}}
-              <!---
-             <br>
-              {{detail?.name}}
+          <p *ngIf = "title == 'people'">
+              {{postData?.name}}
               <br>
-              {{detail|json}} --->
+              Birth Year: {{postData?.birth_year}}
+              <br>
+              Species: {{postData?.species}}
+              <br>
+              Height: {{postData?.height}}m
+              <br>
+              Mass: {{postData?.mass}}kg
+              <br>
+              Gender: {{postData?.gender}}
+              <br>
+              Hair Color: {{postData?.hair_color}}
+              <br>
+              Skin Color: {{postData?.skin_color}}
+              <br>
+              Homeworld: {{postData?.homeworld}}
             </p>
+            <p *ngIf = "title == 'planets'">
+                {{postData?.name}}
+                <br>  
+                Rotation Period: {{postData?.rotation_period}}<br>
+                Orbital Period: {{postData?.orbital_period}}<br>
+                Diameter: {{postData?.diameter}}<br>
+                Climate: {{postData?.climate}}<br>
+                Gravity: {{postData?.gravity}}<br>
+                Terrain: {{postData?.terrain}}<br>
+                Surface Water: {{postData?.surface_water}}<br>
+                Population: {{postData?.population}}
+              </p>
+              <p *ngIf = "title != 'people' && title != 'planets'">
+                  {{title}}
+                  <br>
+                  {{postData?.name}}
+                  <br>
+                  {{postData|json}}
+            
+                </p>
       </mat-card-content>
     </mat-card>
 </div>

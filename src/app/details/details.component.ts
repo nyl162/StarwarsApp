@@ -10,9 +10,10 @@ import { SwapiRequestService } from '../services/swapi-request.service';
 })
 export class DetailsComponent implements OnInit {
 
-  detail : any;
   title: string = this.activatedRoute.snapshot.params.CatID;
   imageURL: string;
+  //preData:any;
+  postData:any;
   preURL:string;
   constructor( private DetailL: SwapiRequestService, private activatedRoute:ActivatedRoute, private router: Router ) { }
 
@@ -25,15 +26,20 @@ export class DetailsComponent implements OnInit {
     }
     this.imageURL = `https://starwars-visualguide.com/assets/img/${this.preURL}/${this.activatedRoute.snapshot.params.detailID}.jpg`;
     this.DetailL.detailsinItem(this.activatedRoute.snapshot.params.CatID,this.activatedRoute.snapshot.params.detailID)
+    //this.DetailL.iteminCategory(this.activatedRoute.snapshot.params.CatID)
       .subscribe( (data:any) =>{ 
-
-
-
-
-
-
-        //this.detail = data;
-    });
+       this.postData = data;//.results[+this.activatedRoute.snapshot.params.detailID-1];
+        //console.log(data.results);
+    },
+    /*
+    () => {
+      console.log(this.preData);
+      this.preData.forEach((x) => {
+        
+      console.log(x);
+      });
+    }*/
+    );
     
   }
 
