@@ -1,0 +1,25 @@
+<div fxLayoutAlign="end">
+    <button mat-button class="backButton"  (click) = "goBack()" >
+      <mat-icon class="backIcon">navigate_before</mat-icon>
+    </button>
+  </div>
+
+<div *ngIf="title == 'people'">
+  <mat-card  class="example-card">
+    <div class="addMargin">
+      <img mat-card-image [src]="imageURL" [alt]="detail?.name">
+    </div>
+      <mat-card-content>
+          <p>
+              {{title}}
+              <!---
+             <br>
+              {{detail?.name}}
+              <br>
+              {{detail|json}} --->
+            </p>
+      </mat-card-content>
+    </mat-card>
+</div>
+
+

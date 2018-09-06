@@ -9,20 +9,23 @@ import { importModule } from './import.module';
 import { CategoryComponent } from './category/category.component';
 import { TestComponent } from './test/test.component';
 import { ItemInCategoryComponent } from './item-in-category/item-in-category.component';
-
+import { RoutingModule } from './routing.module';
+import { DetailsComponent } from './details/details.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     CategoryComponent,
     TestComponent,
-    ItemInCategoryComponent
+    ItemInCategoryComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    importModule
+    importModule,
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

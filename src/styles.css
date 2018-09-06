@@ -6,3 +6,15 @@ body { margin: 0; font-family: 'Roboto', sans-serif; }
 .addMargin{
     margin : 20px;
 }
+
+.backButton{
+    position: absolute;
+    left: 0px;
+    top: -60px;
+    height : 0.5px;
+    z-index: 1;
+}
+
+.backIcon{
+    font-size: 3em;
+}

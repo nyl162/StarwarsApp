@@ -1,7 +1,12 @@
-<div *ngFor = "let n of CategoryList">
+<div *ngFor = "let n of CategoryList; let i = index">
   <mat-card class = "addMargin" (click) = "selectedCategory(n.url)" >
     <mat-card-content>
-      {{n.category|titlecase}}
+      <span *ngIf ="i == 0">
+        Characters
+      </span>
+      <span *ngIf ="i != 0">
+         {{n.category|titlecase}}
+      </span>
     </mat-card-content>
   </mat-card>
 </div>
