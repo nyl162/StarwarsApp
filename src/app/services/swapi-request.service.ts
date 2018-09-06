@@ -36,4 +36,25 @@ detailsinItem(Cat,ID):Observable<any>{
   
 }
 
+private newResponse: [] = [];
+
+specialItem(Cat,ID):Observable<any>{
+  return this.http
+  //.get(`https://swapi.co/api/${input}/?format=json`)
+  .get(`https://swapi.co/api/${Cat}/${ID}/?format=json`)
+  .pipe(
+    map(response => {
+      console.log('pipe-map',Object.keys(response),Object.values(response));
+      Object.keys(response).forEach((x,i) => {
+        if(!Object.values(response)[i].isArray){
+        this.newResponse.push({name: ((x == 'title' || x == 'name')?'':x ), value: Object.values(response)[i]});
+        }
+      });
+     
+    return this.newResponse;
+  })
+  );
+  
+}
+
 }

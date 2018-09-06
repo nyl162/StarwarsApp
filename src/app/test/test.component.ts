@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ObtainCategoryService } from '../services/obtain-category.service';
+import {SwapiRequestService} from '../services/swapi-request.service';
 
 @Component({
   selector: 'app-test',
@@ -8,10 +9,13 @@ import { ObtainCategoryService } from '../services/obtain-category.service';
 })
 export class TestComponent implements OnInit {
 
-  constructor(private CategoryL: ObtainCategoryService) {
-    this.CategoryL.checkCategory()
+  private newResponce: any;
+
+  constructor(private specialS: SwapiRequestService) {
+    this.specialS.specialItem('species','2')
       .subscribe( (data:any) =>{ 
         console.log(data);
+        this.newResponce = data;
       })
    }
 
