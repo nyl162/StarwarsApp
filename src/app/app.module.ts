@@ -8,13 +8,15 @@ import { environment } from '../environments/environment';
 import { importModule } from './import.module';
 import { CategoryComponent } from './category/category.component';
 import { TestComponent } from './test/test.component';
+import { ItemInCategoryComponent } from './item-in-category/item-in-category.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CategoryComponent,
-    TestComponent
+    TestComponent,
+    ItemInCategoryComponent
   ],
   imports: [
     BrowserModule,

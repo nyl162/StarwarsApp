@@ -33,9 +33,17 @@ constructor(private CategoryL: ObtainCategoryService) {
         
       });
     })
+
+    /// some how not working
+  this.CategoryList.forEach((item) => {
+    if (item.category == "people"){
+      item.category = "characters";
+    }
+  })
   }
 
   ngOnInit() {
+
 }
 
 selectedCategory(n:string){
