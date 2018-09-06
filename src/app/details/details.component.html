@@ -6,8 +6,8 @@
 
 <div *ngIf="title == 'people'">
   <mat-card  class="example-card">
-    <div class="addMargin">
-      <img mat-card-image [src]="imageURL" [alt]="detail?.name">
+    <div class="addMargin" fxLayoutAlign="center">
+      <img mat-card-image [src]="imageURL" [alt]="detail?.name" style="max-width: 400px;">
     </div>
       <mat-card-content>
           <p>
