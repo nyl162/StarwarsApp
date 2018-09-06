@@ -38,6 +38,8 @@ npm install --save @angular/flex-layout@6.0.0-beta.17
 ng add @angular/pwa
 ```
 
+8. Add {@import "@angular/material/prebuilt-themes/deeppurple-amber.css";} in style.css 
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

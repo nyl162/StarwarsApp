@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { importModule } from './import.module';
+
 
 @NgModule({
   declarations: [
@@ -10,7 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    importModule
   ],
   providers: [],
   bootstrap: [AppComponent]
